@@ -6,9 +6,9 @@
 	calendar-longitude  -83.720169))
 
 ;; Org configuration
-(use-package org 
-  :ensure nil
-  :init 
+(use-package org
+  :after (olivetti mixed-pitch pdf-tools)
+  :init
   (setq org-agenda-files '("~/org")
         org-log-done 'time
         org-return-follows-link t
@@ -25,7 +25,8 @@
          ("C-c c" . #'org-capture))
   :hook ((org-mode . org-indent-mode)      ; Make the indentation look nicer
          (org-mode . visual-line-mode)     ; Wrap the lines in org mode so that things are easier to read
-         (org-mode . olivetti-mode)))   
+         (org-mode . olivetti-mode)
+	 (org-mode . mixed-pitch-mode)))
 
 ;; Zettelkasten for org
 (use-package org-roam
@@ -39,10 +40,12 @@
          ("C-c n c" . org-roam-capture)))
 
 (use-package mixed-pitch
-  :hook (text-mode . mixed-pitch-mode))
+  :demand t
+  :diminish)
 
 ;; Nice writing mode
 (use-package olivetti
+  :demand t
   :diminish
   :init (setq olivetti-body-width 100)
   :bind ("C-c o" . olivetti-mode))
@@ -68,9 +71,6 @@
               ("s"  . pdf-occur)
               ("b"  . pdf-view-set-slice-from-bounding-box)
 	      ("r"  . pdf-view-reset-slice)))
-
-(use-package org-pdftools
-  :hook (org-mode . org-pdftools-setup-link))
 
 (use-package auctex
   :init
