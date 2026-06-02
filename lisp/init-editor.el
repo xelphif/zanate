@@ -207,7 +207,7 @@
 
          (before-save . eglot-format-buffer)
 
-         ;; (lisp-data-mode . flymake-mode)
+         (lisp-data-mode . flymake-mode)
 
          (text-mode . visual-line-mode)))
 
