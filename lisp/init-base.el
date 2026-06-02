@@ -20,6 +20,9 @@
   (setq scroll-step 1
         scroll-margin 1)
 
+  (setq calendar-latitude    11.856720
+        calendar-longitude  -86.240158)
+
   :config
   ;; Remember recent files
   (recentf-mode 1)
