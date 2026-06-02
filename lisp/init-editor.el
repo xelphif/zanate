@@ -1,4 +1,4 @@
-;;; init-editor.el --- Programming configuration      -*- lexical-binding: t -*-
+;;;; init-editor.el --- Programming configuration      -*- lexical-binding: t -*-
 
 ;;; Code
 
@@ -179,13 +179,10 @@
   (minibuffer-prompt-properties
    '(read-only t cursor-intangible t face minibuffer-prompt))
 
-  ;; Emacs 30 and newer: Disable Ispell completion function.
-  ;; Try `cape-dict' as an alternative.
+  ;; Disable Ispell completion function.
   (text-mode-ispell-word-completion nil)
 
-  ;; Hide commands in M-x which do not apply to the current mode.  Corfu
-  ;; commands are hidden, since they are not used via M-x. This setting is
-  ;; useful beyond Corfu.
+  ;; Hide commands in M-x which do not apply to the current mode.
   (read-extended-command-predicate #'command-completion-default-include-p)
     
   :hook ((prog-mode . electric-pair-mode)

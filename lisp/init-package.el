@@ -1,5 +1,7 @@
 ;;;; init-package.el --- Package initialization     -*- lexical-binding: t -*-
 
+;;; Code
+
 ;;; Package management
 
 ;; Initialize package sources
