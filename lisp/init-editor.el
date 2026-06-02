@@ -92,9 +92,6 @@
   (vertico-mode))
 
 (use-package consult
-  :init
-  (setq consult-fd-args '("fd" "--color=never" "--hidden"))
-
   :bind (("C-x M-:" . 'consult-complex-command)
          ("C-x b" . 'consult-buffer)
          ("C-x r b" . 'consult-bookmark)
@@ -136,13 +133,10 @@
   :bind (:map minibuffer-local-map
          ("M-A" . marginalia-cycle)))
 
-;; Optionally use the `orderless' completion style.
 (use-package orderless
   :custom
-  ;; (orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch))
-  ;; (orderless-component-separator #'orderless-escapable-split-on-space)
   (completion-styles '(orderless basic substring))
-  (completion-category-overrides '((file (styles basic partial-completion)))))
+  (completion-category-overrides '((file (styles orderless basic partial-completion)))))
 
 (use-package emacs
   :init
