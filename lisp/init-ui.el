@@ -14,7 +14,7 @@
   :init
   (setq mixed-pitch-set-height 1))
 
-;; Theme
+;;; Theme
 (use-package solarized-theme
   :demand t
   :init
@@ -30,7 +30,7 @@
   :config
   (circadian-setup))
 
-;; Padding
+;;; Padding
 (use-package spacious-padding
   :demand t
   :init

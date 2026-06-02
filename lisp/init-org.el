@@ -1,5 +1,6 @@
 ;;;; init-org.el --- Org mode configuration    -*- lexical-binding: t -*-
 
+;;; Code
 
 ;; Org configuration
 (use-package org
