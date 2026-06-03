@@ -1,5 +1,9 @@
 ;;;; init-ui.el --- UI configuration    -*- lexical-binding: t -*-
 
+;; Font
+(set-face-font 'default "Mononoki Nerd Font Mono")
+(set-face-font 'variable-pitch "LMRoman12")
+(copy-face 'default 'fixed-pitch)
 
 ;; Theme
 (use-package solarized-theme
@@ -12,6 +16,15 @@
 ;; Padding
 (use-package spacious-padding
   :demand t
+  :init
+  (setq spacious-padding-widths
+    '( :internal-border-width 0
+       :header-line-width 4
+       :mode-line-width 6
+       :tab-width 4
+       :right-divider-width 30
+       :scroll-bar-width 8
+       :fringe-width 8))
   :config 
   (spacious-padding-mode 1))
 
