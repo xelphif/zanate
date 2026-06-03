@@ -25,12 +25,22 @@
 ;; to skip the mtime checks on every *.elc file.
 (setq load-prefer-newer noninteractive)
 
+;; Inhibit resizing frame
+(setq frame-inhibit-implied-resize t)
+
 ;; Disable unnecessary GUI elements
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars . nil) default-frame-alist)
 
+;; Setting the face in here prevents flashes of
+;; color as the theme gets activated
+(push '(background-color . "#000000") default-frame-alist)
+(push '(ns-appearance . dark) default-frame-alist)
+(push '(ns-transparent-titlebar . t) default-frame-alist)
+
 ;; Swap modeline to header
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format nil)
+
 ;;; early-init.el ends here

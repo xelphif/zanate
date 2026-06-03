@@ -18,7 +18,7 @@
   :demand t
   :init
   (setq spacious-padding-widths
-    '( :internal-border-width 0
+    '( :internal-border-width 15
        :header-line-width 4
        :mode-line-width 6
        :tab-width 4
