@@ -15,7 +15,14 @@
   :config 
   (spacious-padding-mode 1))
 
+;; (use-package doom-nano-modeline
+;;   :vc (:url "https://github.com/ronisbr/doom-nano-modeline")
+;;   :demand t
+;;   :config
+;;     (doom-nano-modeline-mode 1))
+
+
 (provide 'init-ui)
 
 
-;; init-ui.el ends here
+;;; init-ui.el ends here
