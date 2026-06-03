@@ -1,4 +1,4 @@
-;;; init-prog.el --- Programming configuration
+;;; init-prog.el --- Programming configuration      -*- lexical-binding: t -*-
 
 ;;; Code
 
@@ -23,10 +23,10 @@
   :custom
   ;; TAB cycle if there are only few candidates
   ;; (completion-cycle-threshold 3)
-
-  ;; Enable indentation+completion using the TAB key.
-  ;; `completion-at-point' is often bound to M-TAB.
-  (tab-always-indent 'complete)
+  
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  (setq indent-line-function 'insert-tab)
 
   ;; Emacs 30 and newer: Disable Ispell completion function.
   ;; Try `cape-dict' as an alternative.
@@ -36,11 +36,11 @@
   ;; commands are hidden, since they are not used via M-x. This setting is
   ;; useful beyond Corfu.
   (read-extended-command-predicate #'command-completion-default-include-p)
-
+    
   :hook ((prog-mode . electric-pair-mode)
          (prog-mode . display-line-numbers-mode)
-	 (prog-mode . flymake-mode)
-	 (prog-mode . eglot-ensure)))
+         (prog-mode . flymake-mode)
+         (prog-mode . eglot-ensure)))
 
 (provide 'init-prog)
 ;;; init-prog.el ends here
