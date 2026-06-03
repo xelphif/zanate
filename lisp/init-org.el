@@ -32,6 +32,15 @@
   :config
   (org-roam-db-autosync-mode))
 
+(use-package mixed-pitch
+  :hook (text-mode . mixed-pitch-mode))
+
+;; Nice writing mode
+(use-package olivetti
+  :diminish
+  :init (setq olivetti-body-width 0.6)
+  :bind ("C-c o" . olivetti-mode))
+
 (provide 'init-org)
 
 
