@@ -4,25 +4,28 @@
 ;; Org configuration
 (use-package org 
   :ensure nil
-  :config
+  :init 
   (setq org-agenda-files '("~/org")
         org-log-done 'time
-        org-return-follows-link t)
-
+        org-return-follows-link t
+        org-adapt-indentation t
+        org-hide-emphasis-markers t
+        org-pretty-entities t
+	    org-ellipsis "  ·")
+  :config
   ;; Associate all org files with org mode
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-  ;; Make the indentation look nicer
-  (add-hook 'org-mode-hook 'org-indent-mode)
-  ;; Wrap the lines in org mode so that things are easier to read
-  (add-hook 'org-mode-hook 'visual-line-mode)
-
   :bind (("C-c l" . #'org-store-link)
          ("C-c a" . #'org-agenda)
-         ("C-c c" . #'org-capture)))
+         ("C-c c" . #'org-capture))
+  :hook ((org-mode . org-indent-mode)      ; Make the indentation look nicer
+         (org-mode . visual-line-mode)
+         (org-mode . olivetti-mode)))   ; Wrap the lines in org mode so that things are easier to read
 
-
+;; Zettelkasten for org
 (use-package org-roam
+  :demand
   :custom (org-roam-directory (file-truename "~/notes"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
