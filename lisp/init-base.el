@@ -23,6 +23,10 @@
   ;; Place custom variables in another file 
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+  ;; Gradual scroll instead of sudden jumps
+  (setq scroll-step 1)
+  (setq scroll-margin 1)
+
   :config
   ;; Remember recent files
   (recentf-mode 1)

@@ -21,12 +21,8 @@
 
 (use-package emacs
   :custom
-  ;; TAB cycle if there are only few candidates
-  ;; (completion-cycle-threshold 3)
-  
-  (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 4)
-  (setq indent-line-function 'insert-tab)
+  (indent-tabs-mode nil)
+  (tab-width 4)
 
   ;; Emacs 30 and newer: Disable Ispell completion function.
   ;; Try `cape-dict' as an alternative.
@@ -38,6 +34,7 @@
   (read-extended-command-predicate #'command-completion-default-include-p)
     
   :hook ((prog-mode . electric-pair-mode)
+         (prog-mode . toggle-truncate-lines)
          (prog-mode . display-line-numbers-mode)
          (prog-mode . flymake-mode)
          (prog-mode . eglot-ensure)))
