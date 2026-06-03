@@ -4,12 +4,12 @@
 ;;; Basic preferences
 
 (setq inhibit-startup-message t     ; Don't show the splash screen
-      visible-bell t                ; Flash when alert bell sounds
+      ;; visible-bell t                ; Flash when alert bell sounds
       make-backup-files nil         ; Disable backup files
       auto-save-default nil)        ; Disable auto save
 
 ;; Always show line numbers
-(global-display-line-numbers-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Remember recent files
 (recentf-mode 1)
