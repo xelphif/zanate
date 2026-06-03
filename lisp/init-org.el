@@ -20,12 +20,11 @@
          ("C-c a" . #'org-agenda)
          ("C-c c" . #'org-capture))
   :hook ((org-mode . org-indent-mode)      ; Make the indentation look nicer
-         (org-mode . visual-line-mode)
-         (org-mode . olivetti-mode)))   ; Wrap the lines in org mode so that things are easier to read
+         (org-mode . visual-line-mode)     ; Wrap the lines in org mode so that things are easier to read
+         (org-mode . olivetti-mode)))   
 
 ;; Zettelkasten for org
 (use-package org-roam
-  :demand
   :custom (org-roam-directory (file-truename "~/notes"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
