@@ -5,30 +5,30 @@
 ;; Defer garbage collection further back in the startup process
 (setq gc-cons-threshold most-positive-fixnum)
 
-;; Prevent unwanted runtime compilation for gccemacs (native-comp) users;
-;; packages are compiled ahead-of-time when they are installed and site files
-;; are compiled when gccemacs is installed.
-(setq native-comp-deferred-compilation nil ;; obsolete since 29.1
-      native-comp-jit-compilation nil)
+;; Restore value after startup
+(add-hook 'emacs-startup-hook
+          (lambda () (setq gc-cons-threshold (* 50 1024 1024))))
 
-;; Package initialize occurs automatically, before `user-init-file' is
-;; loaded, but after `early-init-file'. We handle package
-;; initialization, so we must prevent Emacs from doing it early!
+;; Profile emacs startup
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Zanate Emacs loaded in %s."
+                     (emacs-init-time))))
+
+
+;; Disable automatic package initialization. This is handled later.
 (setq package-enable-at-startup nil)
 
-;; `use-package' is builtin since 29.
-;; It must be set before loading `use-package'.
-(setq use-package-enable-imenu-support t)
-
-;; In noninteractive sessions, prioritize non-byte-compiled source files to
-;; prevent the use of stale byte-code. Otherwise, it saves us a little IO time
-;; to skip the mtime checks on every *.elc file.
+;; Do not check mtimes on elisp bytcode.
 (setq load-prefer-newer noninteractive)
 
 ;; Inhibit resizing frame
 (setq frame-inhibit-implied-resize t)
 
 ;; Disable unnecessary GUI elements
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 (push '(undecorated . t) default-frame-alist)
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
@@ -36,8 +36,6 @@
 
 ;; Setting the face in here prevents flashes of
 ;; color as the theme gets activated
-;; (push '(background-color . "#000000") default-frame-alist)
-;; (push '(ns-appearance . dark) default-frame-alist)
 (push '(ns-transparent-titlebar . t) default-frame-alist)
 
 ;; Swap modeline to header
