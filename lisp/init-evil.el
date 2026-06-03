@@ -24,7 +24,8 @@
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal)
 
-  :bind (:map evil-insert-state-map
+  :bind
+  (:map evil-insert-state-map
 	("C-g" . evil-normal-state)
 	("C-h" . evil-delete-backward-char-and-join)))
 
