@@ -33,18 +33,31 @@
 		       (evil-local-set-key 'normal (kbd ",")   'neotree-hidden-file-toggle)
 		       (evil-local-set-key 'normal (kbd "gr")  'neotree-refresh))))
 
+(use-package avy
+  :after evil
+  :config
+  (setq avy-timeout-seconds 0.3)
+  :bind (("M-s" . avy-goto-char-timer)
+         ("M-g g" . avy-goto-line)
+         ("M-g w" . avy-goto-word-1)
+
+         :map evil-normal-state-map
+         ("<leader>x" . 'avy-goto-char-timer)
+         ("<leader>s" . 'avy-goto-line)
+         ("<leader>w" . 'avy-goto-word-1)))
+
 ;; Enable Vertico.
 (use-package vertico
   :init
   (vertico-mode)
   :config
-  (vertico-flat-mode 1)
-  (setq vertico-cylcle t))
+  (setq vertico-cycle t)
+  (vertico-flat-mode 1))
 
 (use-package consult
-  :demand t
+  :config
   :bind (:map evil-normal-state-map
-              ("<leader>f" . 'consult-find)))
+              ("<leader>f" . 'consult-fd)))
 
 ;; Optionally use the `orderless' completion style.
 (use-package orderless
