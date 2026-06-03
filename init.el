@@ -17,9 +17,6 @@
 ;;
 ;;      ZANATE EMACS
 
-;; Optimize Garbage Collection for Startup
-(setq gc-cons-threshold most-positive-fixnum)
-
 ;; Add "lisp" to the beginning of `load-path`
 (defun update-load-path (&rest _)
   "Update the `load-path` to prioritize personal configurations."
@@ -34,7 +31,7 @@
 
 ;;; Load modules
 
-;; Packages
+;; `use-package' initialization
 (require 'init-package)
 
 ;; Preferences
