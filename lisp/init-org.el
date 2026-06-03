@@ -40,10 +40,8 @@
 ;; Nice writing mode
 (use-package olivetti
   :diminish
-  :init (setq olivetti-body-width 0.6)
+  :init (setq olivetti-body-width 100)
   :bind ("C-c o" . olivetti-mode))
 
 (provide 'init-org)
-
-
 ;;; init-org.el ends here

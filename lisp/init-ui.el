@@ -22,7 +22,7 @@
        :header-line-width 4
        :mode-line-width 6
        :tab-width 4
-       :right-divider-width 30
+       :right-divider-width 15
        :scroll-bar-width 8
        :fringe-width 8))
   :config 
