@@ -49,13 +49,12 @@
 ;; Enable Vertico.
 (use-package vertico
   :init
-  (vertico-mode)
-  :config
   (setq vertico-cycle t)
-  (vertico-flat-mode 1))
+  (vertico-mode))
+  ;; :config
+  ;; (vertico-flat-mode 1))
 
 (use-package consult
-  :config
   :bind (:map evil-normal-state-map
               ("<leader>f" . 'consult-fd)))
 
@@ -65,7 +64,8 @@
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch))
   ;; (orderless-component-separator #'orderless-escapable-split-on-space)
-  (completion-styles '(orderless basic substring)))
+  (completion-styles '(orderless basic substring))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package emacs
   :custom

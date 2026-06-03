@@ -14,6 +14,8 @@
   ;; Place custom variables in another file 
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+  (setq pgtk-wait-for-event-timeout 0)
+
   ;; Gradual scroll instead of sudden jumps
   (setq scroll-step 1)
   (setq scroll-margin 1)

@@ -25,7 +25,6 @@
          ("C-c n c" . #'org-capture))
 
   :hook ((org-mode . org-indent-mode)      ; Make the indentation look nicer
-         (org-mode . visual-line-mode)     ; Wrap the lines in org mode so that things are easier to read
          (org-mode . olivetti-mode)
          (org-mode . mixed-pitch-mode)
 
