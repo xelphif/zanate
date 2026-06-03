@@ -26,13 +26,13 @@
 ;; Zettelkasten for org
 (use-package org-roam
   :custom (org-roam-directory (file-truename "~/notes"))
+  :config
+  (org-roam-db-autosync-mode)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
          ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture))
-  :config
-  (org-roam-db-autosync-mode))
+         ("C-c n c" . org-roam-capture)))
 
 (use-package mixed-pitch
   :hook (text-mode . mixed-pitch-mode))

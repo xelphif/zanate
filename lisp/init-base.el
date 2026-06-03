@@ -1,36 +1,32 @@
 ;;;; init-base.el --- Default configuration options   -*- lexical-binding: t -*-
 
-
 ;;; Basic preferences
 
-(setq inhibit-startup-message t     ; Don't show the splash screen
-      ;; visible-bell t                ; Flash when alert bell sounds
-      make-backup-files nil         ; Disable backup files
-      auto-save-default nil)        ; Disable auto save
-;; Remember recent files
-(recentf-mode 1)
+(use-package emacs
+  :init
+  (setq inhibit-startup-message t     ; Don't show the splash screen
+     ;; visible-bell t                ; Flash when alert bell sounds
+        make-backup-files nil         ; Disable backup files
+        auto-save-default nil         ; Disable auto save
+        use-dialog-box nil            ; No dialog boxes
+        history-length 25)            ; Remember minibuffer inputs
 
-;; Remember minibuffer inputs
-(setq history-length 25)
-(savehist-mode 1)
+  ;; Place custom variables in another file 
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;; Remember and restore the cursor position of opened files
-(save-place-mode 1)
+  :config
+  ;; Remember recent files
+  (recentf-mode 1)
 
-;; Place custom variables in another file 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+  ;; Remember and restore the cursor position of opened files
+  (save-place-mode 1)
 
-;; No dialog boxes
-(setq use-dialog-box nil)
+  (load custom-file)
 
-;; Revert buffers when the underlying file has changed
-(global-auto-revert-mode 1)
+  ;; Revert buffers when the underlying file has changed
+  (global-auto-revert-mode 1)
 
-;; Make escape quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+  :bind (("<escape>" . 'keyboard-escape-quit)))
 
 (provide 'init-base)
-
-
 ;;; init-base.el ends here
