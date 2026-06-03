@@ -29,14 +29,15 @@
 (setq frame-inhibit-implied-resize t)
 
 ;; Disable unnecessary GUI elements
+(push '(undecorated . t) default-frame-alist)
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars . nil) default-frame-alist)
 
 ;; Setting the face in here prevents flashes of
 ;; color as the theme gets activated
-(push '(background-color . "#000000") default-frame-alist)
-(push '(ns-appearance . dark) default-frame-alist)
+;; (push '(background-color . "#000000") default-frame-alist)
+;; (push '(ns-appearance . dark) default-frame-alist)
 (push '(ns-transparent-titlebar . t) default-frame-alist)
 
 ;; Swap modeline to header

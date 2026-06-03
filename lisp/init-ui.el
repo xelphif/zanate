@@ -1,9 +1,14 @@
 ;;;; init-ui.el --- UI configuration    -*- lexical-binding: t -*-
 
 ;; Font
-(set-face-font 'default "Mononoki Nerd Font Mono")
-(set-face-font 'variable-pitch "LMRoman12")
-(copy-face 'default 'fixed-pitch)
+(set-face-attribute 'default nil
+                    :font (font-spec :family "mononoki" :size 18 :weight 'regular))
+
+(set-face-attribute 'variable-pitch nil
+                    :font (font-spec :family "NewComputerModern10" :size 20 :weight 'regular))
+
+(set-face-attribute 'fixed-pitch nil
+                    :font (font-spec :family "mononoki" :size 18))
 
 ;; Theme
 (use-package solarized-theme
@@ -17,7 +22,7 @@
   :after solarized-theme
   :init
   (setq circadian-themes '((:sunrise . solarized-light)
-			   (:sunset  . solarized-dark)))
+                           (:sunset  . solarized-dark)))
   :config
   (circadian-setup))
 

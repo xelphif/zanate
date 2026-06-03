@@ -2,8 +2,8 @@
 
 (use-package emacs
   :init
-  (setq calendar-latitude    33.992611
-	calendar-longitude  -83.720169))
+  (setq calendar-latitude    11.856720
+        calendar-longitude  -86.240158))
 
 ;; Org configuration
 (use-package org
