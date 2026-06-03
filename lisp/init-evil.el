@@ -29,9 +29,13 @@
 
 (use-package evil-collection
   :after (evil magit)
-  :ensure t
   :config
   (evil-collection-init))
+
+(use-package evil-easymotion
+  :after evil
+  :init
+  (evilem-default-keybindings "SPC"))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
