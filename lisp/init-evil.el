@@ -25,7 +25,8 @@
   (evil-set-initial-state 'dashboard-mode 'normal))
 
 (use-package evil-collection
-  :after evil
+  :after (evil magit)
+  :ensure t
   :config
   (evil-collection-init))
 
