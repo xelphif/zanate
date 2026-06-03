@@ -49,30 +49,6 @@
   :config
   (setq which-key-idle-delay 1))
 
-;; File tree
-(use-package neotree
-  :after evil
-  :config
-  (setq neo-theme 'ascii)
-  :bind (:map evil-normal-state-map
-              ("<leader>e" . 'neotree-toggle))
-  :hook (neotree-mode . (lambda ()
-		       (evil-local-set-key 'normal (kbd "RET") 'neotree-enter)
-		       (evil-local-set-key 'normal (kbd "SPC") 'neotree-enter)
-		       (evil-local-set-key 'normal (kbd "TAB") 'neotree-quick-look)
-		       (evil-local-set-key 'normal (kbd "s")   'neotree-enter-vertical-split)
-		       (evil-local-set-key 'normal (kbd "S")   'neotree-enter-horizontal-split)
-		       (evil-local-set-key 'normal (kbd "a")   'neotree-create-node)
-		       (evil-local-set-key 'normal (kbd "d")   'neotree-delete-node)
-		       (evil-local-set-key 'normal (kbd "H")   'neotree-select-previous-sibling-node)
-		       (evil-local-set-key 'normal (kbd "J")   'neotree-select-down-node)
-		       (evil-local-set-key 'normal (kbd "K")   'neotree-select-up-node)
-		       (evil-local-set-key 'normal (kbd "L")   'neotree-select-next-sibling-node)
-		       (evil-local-set-key 'normal (kbd "r")   'neotree-rename-node)
-		       (evil-local-set-key 'normal (kbd ".")   'neotree-change-root)
-		       (evil-local-set-key 'normal (kbd ",")   'neotree-hidden-file-toggle)
-		       (evil-local-set-key 'normal (kbd "gr")  'neotree-refresh))))
-
 (use-package avy
   :after evil
   :config
