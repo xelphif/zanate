@@ -135,8 +135,7 @@
 
 (use-package orderless
   :custom
-  (completion-styles '(orderless basic substring))
-  (completion-category-overrides '((file (styles orderless basic partial-completion)))))
+  (completion-styles '(orderless basic substring)))
 
 (use-package emacs
   :init
