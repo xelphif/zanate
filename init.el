@@ -13,12 +13,12 @@
 ;;        +-. #   #####
 ;;         --.     ##+
 ;;          ---.   ####
-;;           ----           
-;; 
+;;           ----
+;;
 ;;      ZANATE EMACS
 
-
-;;; Configure load path
+;; Optimize Garbage Collection for Startup
+(setq gc-cons-threshold most-positive-fixnum)
 
 ;; Add "lisp" to the beginning of `load-path`
 (defun update-load-path (&rest _)

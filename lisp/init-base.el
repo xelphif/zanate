@@ -1,5 +1,14 @@
 ;;;; init-base.el --- Default configuration options   -*- lexical-binding: t -*-
 
+;; Garbage Collector Magic Hack
+(use-package gcmh
+  :diminish
+  :hook (emacs-startup . gcmh-mode)
+  :init
+  (setq gcmh-idle-delay 'auto
+        gcmh-auto-idle-delay-factor 10
+        gcmh-high-cons-threshold #x1000000)) ; 16MB
+
 ;;; Basic preferences
 
 (use-package emacs
