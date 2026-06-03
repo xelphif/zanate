@@ -8,4 +8,4 @@
 ;; Swap modeline to header
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format nil)
-
+;;; early-init.el ends here

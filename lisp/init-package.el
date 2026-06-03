@@ -1,6 +1,5 @@
 ;;;; init-package.el --- Package initialization     -*- lexical-binding: t -*-
 
-
 ;;; Package management
 
 ;; Initialize package sources
@@ -34,6 +33,4 @@
     (defalias 'package-upgrade-all #'auto-package-update-now)))
 
 (provide 'init-package)
-
-
 ;;; init-package.el ends here

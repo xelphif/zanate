@@ -34,8 +34,5 @@
 ;;   :config
 ;;     (doom-nano-modeline-mode 1))
 
-
 (provide 'init-ui)
-
-
 ;;; init-ui.el ends here

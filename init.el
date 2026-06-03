@@ -1,18 +1,18 @@
 ;;;; init.el --- Simple, modular emacs configuration    -*- lexical-binding: t -*-
 
 ;;
-;;           ++             
-;;         #####+++         
-;;        ######            
-;;       ########-          
-;;       ##########         
-;;        ##########        
-;;         #######+##       
-;;          ########+       
-;;        #++- #+####+      
-;;        +-. #   #####     
-;;         --.     ##+      
-;;          ---.   ####     
+;;           ++
+;;         #####+++
+;;        ######
+;;       ########-
+;;       ##########
+;;        ##########
+;;         #######+##
+;;          ########+
+;;        #++- #+####+
+;;        +-. #   #####
+;;         --.     ##+
+;;          ---.   ####
 ;;           ----           
 ;; 
 ;;      ZANATE EMACS
@@ -32,7 +32,6 @@
 ;; Initialize load paths explicitly
 (update-load-path)
 
-
 ;;; Load modules
 
 ;; Packages
@@ -45,3 +44,4 @@
 (require 'init-org)
 (require 'init-prog)
 (require 'init-ui)
+;;; init.el ends here

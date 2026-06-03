@@ -1,6 +1,5 @@
 ;;;; init-org.el --- Org mode configuration    -*- lexical-binding: t -*-
 
-
 ;; Org configuration
 (use-package org 
   :ensure nil
@@ -11,7 +10,7 @@
         org-adapt-indentation t
         org-hide-emphasis-markers t
         org-pretty-entities t
-	    org-ellipsis "  ·")
+	org-ellipsis "  ·")
   :config
   ;; Associate all org files with org mode
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))

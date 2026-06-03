@@ -1,6 +1,5 @@
 ;;;; init-evil.el --- Evil mode coniguration   -*- lexical-binding: t -*-
 
-
 ;; Sophisticated undo behavior
 (use-package undo-tree)
 
@@ -35,6 +34,4 @@
   (evil-collection-init))
 
 (provide 'init-evil)
-
-
 ;;; init-evil.el ends here

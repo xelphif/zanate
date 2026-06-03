@@ -1,5 +1,6 @@
 ;;;; init-utils.el --- Utility configuration    -*- lexical-binding: t -*-
 
+;;; Code
 
 ;; Command hints
 (use-package which-key
