@@ -39,6 +39,6 @@
 (require 'init-evil)
 (require 'init-utils)
 (require 'init-org)
-(require 'init-prog)
+(require 'init-editor)
 (require 'init-ui)
 ;;; init.el ends here
