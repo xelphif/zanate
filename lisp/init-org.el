@@ -1,5 +1,10 @@
 ;;;; init-org.el --- Org mode configuration    -*- lexical-binding: t -*-
 
+(use-package emacs
+  :init
+  (setq calendar-latitude    33.992611
+	calendar-longitude  -83.720169))
+
 ;; Org configuration
 (use-package org 
   :ensure nil

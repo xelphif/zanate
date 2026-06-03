@@ -8,10 +8,18 @@
 ;; Theme
 (use-package solarized-theme
   :demand t
-  :init 
-  (setq solarized-high-contrast-mode-line t)
+  :init
+  (setq solarized-high-contrast-mode-line t))
+
+;; Theme based on sun
+(use-package circadian
+  :demand t
+  :after solarized-theme
+  :init
+  (setq circadian-themes '((:sunrise . solarized-light)
+			   (:sunset  . solarized-dark)))
   :config
-  (load-theme 'solarized-light))
+  (circadian-setup))
 
 ;; Padding
 (use-package spacious-padding
