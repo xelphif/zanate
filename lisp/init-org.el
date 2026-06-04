@@ -7,7 +7,6 @@
 
 ;; Org configuration
 (use-package org
-  :after (olivetti mixed-pitch)
   :init
   (setq org-agenda-files '("~/org")
         org-log-done 'time
@@ -43,12 +42,10 @@
          ("C-c n c" . org-roam-capture)))
 
 (use-package mixed-pitch
-  :demand t
   :diminish)
 
 ;; Nice writing mode
 (use-package olivetti
-  :demand t
   :diminish
   :init (setq olivetti-body-width 100)
   :bind ("C-c o" . olivetti-mode))

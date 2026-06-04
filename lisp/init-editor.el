@@ -4,8 +4,7 @@
 
 ;; TODO: Use dired
 ;; Git integration
-(use-package magit
-  :demand t)
+(use-package magit)
 
 ;; LSP + Completion
 (use-package corfu
