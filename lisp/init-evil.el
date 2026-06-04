@@ -23,10 +23,15 @@
 
   (evil-set-initial-state 'messages-buffer-mode 'normal)
 
-  :bind
-  (:map evil-insert-state-map
-	("C-g" . evil-normal-state)
-	("C-h" . evil-delete-backward-char-and-join)))
+  :bind (:map evil-insert-state-map
+              ("C-g" . evil-normal-state)
+	          ("C-h" . evil-delete-backward-char-and-join)
+
+         :map evil-normal-state-map
+              ("<leader>ee" . find-file)
+              ("<leader>ew" . find-file-other-window)
+              ("<leader>er" . find-file-read-only)
+              ("<leader>eR" . find-file-read-only-other-window)))
 
 (use-package evil-collection
   :after evil
