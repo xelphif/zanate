@@ -28,8 +28,10 @@
 	          ("C-h" . evil-delete-backward-char-and-join)
 
          :map evil-normal-state-map
-              ("<leader>ee" . find-file)
-              ("<leader>ew" . find-file-other-window)
+              ("<leader>ee" . dired)
+              ("<leader>eE" . dired-other-window)
+              ("<leader>ef" . find-file)
+              ("<leader>eF" . find-file-other-window)
               ("<leader>er" . find-file-read-only)
               ("<leader>eR" . find-file-read-only-other-window)))
 
