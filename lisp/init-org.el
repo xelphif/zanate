@@ -19,9 +19,9 @@
   ;; Associate all org files with org mode
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-  :bind (("C-c n l" . #'org-store-link)
-         ("C-c n a" . #'org-agenda)
-         ("C-c n c" . #'org-capture))
+  :bind (("C-c l" . #'org-store-link)
+         ("C-c a" . #'org-agenda)
+         ("C-c c" . #'org-capture))
 
   :hook ((org-mode . org-indent-mode)      ; Make the indentation look nicer
          (org-mode . olivetti-mode)

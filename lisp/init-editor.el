@@ -27,21 +27,21 @@
         eglot-extend-to-xref t
         eglot-autoreconnect t)
   
-  :bind (("C-c l e" . eglot)
-         ("C-c l x" . eglot-reconnect)
-         ("C-c l m" . eglot-menu)
-         ("C-c l i" . eglot-find-implementation)
-         ("C-c l f" . eglot-format-buffer)
-         ("C-c l r" . eglot-rename)
-         ("C-c l a" . eglot-code-actions)
-         ("C-c l h" . eglot-inlay-hints-mode)))
+  :bind (("C-c e e" . eglot)
+         ("C-c e x" . eglot-reconnect)
+         ("C-c e m" . eglot-menu)
+         ("C-c e i" . eglot-find-implementation)
+         ("C-c e f" . eglot-format-buffer)
+         ("C-c e r" . eglot-rename)
+         ("C-c e a" . eglot-code-actions)
+         ("C-c e h" . eglot-inlay-hints-mode)))
 
 (use-package flymake
   :ensure nil
-  :bind (("C-c l d" . flymake-mode)
-         ("C-c l n" . flymake-goto-next-error)
-         ("C-c l p" . flymake-goto-prev-error)
-         ("C-c l l" . flymake-show-buffer-diagnostics)))
+  :bind (("C-c e d" . flymake-mode)
+         ("C-c e n" . flymake-goto-next-error)
+         ("C-c e p" . flymake-goto-prev-error)
+         ("C-c e l" . flymake-show-buffer-diagnostics)))
 
 (use-package emacs
   :init
