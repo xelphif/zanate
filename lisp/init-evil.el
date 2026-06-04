@@ -36,6 +36,7 @@
 (use-package evil-collection
   :after evil
   :demand t
+  :diminish
   :config
   (evil-collection-init))
 

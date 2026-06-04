@@ -3,12 +3,24 @@
 ;;; Font
 (use-package emacs
   :init
+
+  ;;; Modeline
+  (setq mode-line-percent-position nil)
+  (setq mode-line-collapse-minor-modes '(not flymake-mode
+                                             overwrite-mode))
+  (setq mode-line-collapse-minor-modes-to "[+]")
+
   (setq pgtk-wait-for-event-timeout 0)
 
   (setq calendar-latitude    11.856720
         calendar-longitude  -86.240158)
 
   :config
+
+  ;;; Modeline
+  (column-number-mode)
+
+  ;;; Fonts
   (set-face-attribute 'default nil
                       :font (font-spec :family "mononoki" :size 18 :weight 'regular))
 
@@ -48,7 +60,7 @@
        :right-divider-width 15
        :scroll-bar-width 8
        :fringe-width 8))
-  :config 
+  :config
   (spacious-padding-mode 1))
 
 ;; (use-package doom-nano-modeline
