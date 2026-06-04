@@ -37,9 +37,6 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture)))
 
-(use-package mixed-pitch
-  :diminish)
-
 ;; Nice writing mode
 (use-package olivetti
   :diminish

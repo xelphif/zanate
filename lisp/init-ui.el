@@ -1,14 +1,18 @@
 ;;;; init-ui.el --- UI configuration    -*- lexical-binding: t -*-
 
-;; Font
-(set-face-attribute 'default nil
-                    :font (font-spec :family "mononoki" :size 18 :weight 'regular))
+;;; Font
+(use-package emacs
+  :config
+  (set-face-attribute 'default nil
+                      :font (font-spec :family "mononoki" :size 18 :weight 'regular))
 
-(set-face-attribute 'variable-pitch nil
-                    :font (font-spec :family "NewComputerModern10" :size 20 :weight 'regular))
+  (set-face-attribute 'variable-pitch nil
+                      :font (font-spec :family "NewComputerModern10" :size 20 :weight 'regular)))
 
-(set-face-attribute 'fixed-pitch nil
-                    :font (font-spec :family "mononoki" :size 18))
+(use-package mixed-pitch
+  :diminish
+  :init
+  (setq mixed-pitch-set-height 1))
 
 ;; Theme
 (use-package solarized-theme
