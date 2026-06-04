@@ -2,6 +2,12 @@
 
 ;;; Font
 (use-package emacs
+  :init
+  (setq pgtk-wait-for-event-timeout 0)
+
+  (setq calendar-latitude    11.856720
+        calendar-longitude  -86.240158)
+
   :config
   (set-face-attribute 'default nil
                       :font (font-spec :family "mononoki" :size 18 :weight 'regular))

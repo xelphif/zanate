@@ -14,15 +14,6 @@
   ;; Place custom variables in another file
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-  (setq pgtk-wait-for-event-timeout 0)
-
-  ;; Gradual scroll instead of sudden jumps
-  (setq scroll-step 1
-        scroll-margin 1)
-
-  (setq calendar-latitude    11.856720
-        calendar-longitude  -86.240158)
-
   :config
   ;; Remember recent files
   (recentf-mode 1)

@@ -116,6 +116,12 @@
 (use-package emacs
   :init
 
+  ;;; Behavior
+
+  ;; Gradual scroll instead of sudden jumps
+  (setq scroll-step 1
+        scroll-margin 1)
+
   ;;; Formatting
 
   ;; Favor spaces over tabs.
