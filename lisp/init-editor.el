@@ -129,6 +129,13 @@
               ("<leader>G" . 'consult-git-grep)
               ("<leader>h" . 'consult-isearch-history)))
 
+(use-package marginalia
+  :init
+  (marginalia-mode)
+
+  :bind (:map minibuffer-local-map
+         ("M-A" . marginalia-cycle)))
+
 ;; Optionally use the `orderless' completion style.
 (use-package orderless
   :custom
