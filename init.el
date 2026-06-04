@@ -37,8 +37,7 @@
 ;; Preferences
 (require 'init-base)
 (require 'init-evil)
-(require 'init-utils)
-(require 'init-org)
 (require 'init-editor)
+(require 'init-org)
 (require 'init-ui)
 ;;; init.el ends here
