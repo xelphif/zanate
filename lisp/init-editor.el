@@ -14,10 +14,11 @@
 
 (use-package cape
   :bind ("C-c p" . cape-prefix-map)
-  :hook ((completion-at-point-function . cape-dabbrev)
-         (completion-at-point-function . cape-file)
-         (completion-at-point-function . cape-history)
-         (completion-at-point-function . cape-elisp-block)))
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-elisp-block)
+  (add-hook 'completion-at-point-functions #'cape-history))
 
 (use-package eglot
   :ensure nil
