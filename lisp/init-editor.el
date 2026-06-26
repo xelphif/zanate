@@ -183,7 +183,7 @@
          (c-ts-mode . eglot-ensure)
          (rust-ts-mode . eglot-ensure)
          (python-ts-mode . eglot-ensure)
-         (markdown-mode . eglot-esnure)
+         (markdown-ts-mode . eglot-ensure)
          (html-ts-mode . eglot-ensure)
          (css-ts-mode . eglot-ensure)
          (sh-mode . eglot-ensure)
