@@ -89,7 +89,7 @@
 
          :map evil-normal-state-map
               ("<leader>cb" . 'consult-bookmark)
-              ("<leacer>cy" . 'consult-yank-pop)
+              ("<leader>cy" . 'consult-yank-pop)
               ("<leader>cm" . 'consult-mark)
               ("<leader>co" . 'consult-outline)
               ("<leader>b" . 'consult-buffer)
