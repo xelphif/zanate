@@ -30,7 +30,15 @@
 (use-package mixed-pitch
   :diminish
   :init
-  (setq mixed-pitch-set-height 1))
+  (setq mixed-pitch-set-height 1)
+
+  :bind ("C-c u m" . mixed-pitch-mode))
+
+;; Nice writing mode
+(use-package olivetti
+  :diminish
+  :init (setq olivetti-body-width 100)
+  :bind ("C-c u o" . olivetti-mode))
 
 ;;; Theme
 (use-package solarized-theme

@@ -21,8 +21,6 @@
          ("C-c c" . #'org-capture))
 
   :hook ((org-mode . org-indent-mode)      ; Make the indentation look nicer
-         (org-mode . olivetti-mode)
-         (org-mode . mixed-pitch-mode)
 
          (org-mode . (lambda ()
                        (evil-local-set-key 'normal (kbd "RET") 'org-return)))))
@@ -37,12 +35,6 @@
          ("C-c n g" . org-roam-graph)
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture)))
-
-;; Nice writing mode
-(use-package olivetti
-  :diminish
-  :init (setq olivetti-body-width 100)
-  :bind ("C-c o" . olivetti-mode))
 
 ;; PDF viewer
 ;; (use-package pdf-tools
