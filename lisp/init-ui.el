@@ -44,7 +44,17 @@
 (use-package solarized-theme
   :demand t
   :init
-  (setq solarized-high-contrast-mode-line t))
+  (add-hook 'enable-theme-functions
+            (lambda (_theme)
+              (dolist (buf (buffer-list))
+                (with-current-buffer buf
+                  (when (derived-mode-p 'pdf-view-mode)
+                    (pdf-view-themed-minor-mode 1))))))
+
+  (setq solarized-high-contrast-mode-line t
+        solarized-highlight-numbers t
+        solarized-scale-org-headlines nil
+        solarized-use-variable-pitch nil))
 
 ;; Theme based on sun
 (use-package circadian
