@@ -21,7 +21,7 @@
   ;; Remember and restore the cursor position of opened files
   (save-place-mode 1)
 
-  (load custom-file)
+  (load custom-file 'noerror 'nomessage)
 
   ;; Revert buffers when the underlying file has changed
   (global-auto-revert-mode 1)
