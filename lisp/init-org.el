@@ -55,32 +55,25 @@
          ("C-c n c" . org-roam-capture)))
 
 ;; PDF viewer
-;; (use-package pdf-tools
-;;   :custom (pdf-annot-minor-mode-map-prefix "a")
-;;   :init
-;;   (pdf-tools-install)
-;;   (setq-default pdf-view-display-size 'fit-page)
-;;   :bind (:map pdf-view-mode-map
-;;               ("<s-spc>" .  pdf-view-scroll-down-or-next-page)
-;;               ("g"  . pdf-view-first-page)
-;;               ("G"  . pdf-view-last-page)
-;;               ("l"  . image-forward-hscroll)
-;;               ("h"  . image-backward-hscroll)
-;;               ("j"  . pdf-view-next-page)
-;;               ("k"  . pdf-view-previous-page)
-;;               ("e"  . pdf-view-goto-page)
-;;               ("u"  . pdf-view-revert-buffer)
-;;               ("y"  . pdf-view-kill-ring-save)
-;;               ("i"  . pdf-misc-display-metadata)
-;;               ("s"  . pdf-occur)
-;;               ("b"  . pdf-view-set-slice-from-bounding-box)
-;;               ("r"  . pdf-view-reset-slice)))
+(use-package pdf-tools
+  :ensure nil       ; managed by guix
+  :custom (pdf-annot-minor-mode-map-prefix "a")
+  :init
+  (pdf-tools-install)
+  (setq-default pdf-view-display-size 'fit-page)
+
+  :hook ((pdf-view-mode . pdf-view-themed-minor-mode)
+         (pdf-view-mode . (lambda ()
+                            (setq-local evil-normal-state-cursor '(nil))))))
+
+(use-package org-pdftools
+  :hook (org-mode . org-pdftools-setup-link))
 
 (use-package auctex
   :init
   (setq TeX-auto-save t
         TeX-parse-self t
-    TeX-view-program-selection '((output-pdf "PDF Tools"))
+        TeX-view-program-selection '((output-pdf "PDF Tools"))
         TeX-source-correlate-start-server t)
   :hook (TeX-after-compilation-finished-functions . TeX-revert-document-buffer))
 
