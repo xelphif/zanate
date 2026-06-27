@@ -12,7 +12,7 @@
   :config
   (evil-mode 1)
 
-  (evil-set-leader nil (kbd ";"))
+  (evil-set-leader nil (kbd "SPC"))
 
   ;; Set undo system to native commands
   (evil-set-undo-system 'undo-redo)
