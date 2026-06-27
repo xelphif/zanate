@@ -25,6 +25,9 @@
                                  (file "~/org/inbox.org")
                                  "* TODO %?\n")))
 
+  (setq org-preview-latex-default-process 'dvisvgm
+        org-startup-with-latex-preview t)
+
   (setq org-return-follows-link t
         org-adapt-indentation t
         org-hide-emphasis-markers t
