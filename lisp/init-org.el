@@ -30,9 +30,21 @@
         org-hide-emphasis-markers t
         org-pretty-entities nil
         org-ellipsis "  ·")
+
+  (setq org-confirm-babel-evaluate nil
+        org-babel-pop-up-error-buffers nil)
+
   :config
   ;; Associate all org files with org mode
   (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((latex . t)
+     (scheme . t)
+     (python . t)
+     (C . t)
+     (emacs-lisp . t)))
 
   :bind (("C-c l" . #'org-store-link)
          ("C-c a" . #'org-agenda)
