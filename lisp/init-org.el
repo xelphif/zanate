@@ -6,11 +6,29 @@
 (use-package org
   :init
   (setq org-agenda-files '("~/org")
+        org-refile-targets '((org-agenda-files :maxlevel . 2))
+        org-refile-use-outline-path 'file
+        org-outline-path-complete-in-steps nil
+
+        org-log-into-drawer t
         org-log-done 'time
-        org-return-follows-link t
+        org-log-redeadline 'time
+        org-log-reschedule 'time)
+
+  (setq org-todo-keywords '((sequence "TODO(t)" "PROG(p!)" "|" "DONE(d)"))
+
+        org-todo-keyword-faces '(("TODO" . (:inherit org-todo))
+                                 ("PROG" . (:inherit warning :weight bold))
+                                 ("DONE" . (:inherit org-done)))
+
+        org-capture-templates '(("t" "Task" entry
+                                 (file "~/org/inbox.org")
+                                 "* TODO %?\n")))
+
+  (setq org-return-follows-link t
         org-adapt-indentation t
         org-hide-emphasis-markers t
-        org-pretty-entities t
+        org-pretty-entities nil
         org-ellipsis "  ·")
   :config
   ;; Associate all org files with org mode
