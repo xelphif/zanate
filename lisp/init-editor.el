@@ -6,6 +6,8 @@
 ;; Git integration
 (use-package magit)
 
+(use-package geiser-guile)
+
 ;; LSP + Completion
 (use-package corfu
   :demand t
