@@ -29,7 +29,6 @@
         org-startup-with-latex-preview t)
 
   (setq org-return-follows-link t
-        org-adapt-indentation t
         org-hide-emphasis-markers t
         org-pretty-entities nil
         org-ellipsis "  ·")
