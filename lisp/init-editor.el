@@ -37,7 +37,10 @@
          ("C-c e f" . eglot-format-buffer)
          ("C-c e r" . eglot-rename)
          ("C-c e a" . eglot-code-actions)
-         ("C-c e h" . eglot-inlay-hints-mode)))
+         ("C-c e h" . eglot-inlay-hints-mode))
+
+  :hook (eglot-managed-mode . (lambda ()
+                                (add-hook 'before-save-hook #'eglot-format-buffer nil t))))
 
 (use-package flymake
   :ensure nil
@@ -189,8 +192,6 @@
          (html-ts-mode . eglot-ensure)
          (css-ts-mode . eglot-ensure)
          (sh-mode . eglot-ensure)
-
-         (before-save . eglot-format-buffer)
 
          (lisp-data-mode . flymake-mode)
 
