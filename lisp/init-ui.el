@@ -1,6 +1,21 @@
 ;;;; init-ui.el --- UI configuration    -*- lexical-binding: t -*-
 
 ;;; Font
+(defun zanate/configure-fonts (frame)
+  "Configure font when graphical FRAME is created."
+  (with-selected-frame frame
+    (when (display-graphic-p)
+      (set-face-attribute 'default nil
+                          :font (font-spec
+                                 :family "mononoki"
+                                 :size 18
+                                 :weight 'regular))
+      (set-face-attribute 'variable-pitch nil
+                          :font (font-spec
+                                 :family "NewComputerModern10"
+                                 :size 20
+                                 :weight 'regular)))))
+
 (use-package emacs
   :init
 
@@ -12,18 +27,15 @@
 
   (setq pgtk-wait-for-event-timeout 0)
 
+  (unless (daemonp)
+    (zanate/configure-fonts (selected-frame)))
+
+  (add-hook 'after-make-frame-functions #'zanate/configure-fonts)
 
   :config
 
   ;;; Modeline
-  (column-number-mode)
-
-  ;;; Fonts
-  (set-face-attribute 'default nil
-                      :font (font-spec :family "mononoki" :size 18 :weight 'regular))
-
-  (set-face-attribute 'variable-pitch nil
-                      :font (font-spec :family "NewComputerModern10" :size 20 :weight 'regular)))
+  (column-number-mode))
 
 (use-package mixed-pitch
   :diminish
