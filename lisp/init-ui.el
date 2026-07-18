@@ -12,8 +12,6 @@
 
   (setq pgtk-wait-for-event-timeout 0)
 
-  (setq calendar-latitude    11.856720
-        calendar-longitude  -86.240158)
 
   :config
 
@@ -44,27 +42,14 @@
 (use-package solarized-theme
   :demand t
   :init
-  (add-hook 'enable-theme-functions
-            (lambda (_theme)
-              (dolist (buf (buffer-list))
-                (with-current-buffer buf
-                  (when (derived-mode-p 'pdf-view-mode)
-                    (pdf-view-themed-minor-mode 1))))))
-
   (setq solarized-high-contrast-mode-line t
         solarized-highlight-numbers t
         solarized-scale-org-headlines nil
-        solarized-use-variable-pitch nil))
+        solarized-use-variable-pitch nil)
+
+  (load-theme 'solarized-light t))
 
 ;; Theme based on sun
-(use-package circadian
-  :demand t
-  :after solarized-theme
-  :init
-  (setq circadian-themes '((:sunrise . solarized-light)
-                           (:sunset  . solarized-dark)))
-  :config
-  (circadian-setup))
 
 ;;; Padding
 (use-package spacious-padding
