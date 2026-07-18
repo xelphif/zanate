@@ -89,7 +89,7 @@
         TeX-parse-self t
         TeX-view-program-selection '((output-pdf "PDF Tools"))
         TeX-source-correlate-start-server t)
-  :hook (TeX-after-compilation-finished-functions . TeX-revert-document-buffer))
+  (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer))
 
 (provide 'init-org)
 ;;; init-org.el ends here
