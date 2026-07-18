@@ -73,7 +73,7 @@
   :ensure nil       ; managed by guix
   :custom (pdf-annot-minor-mode-map-prefix "a")
   :init
-  (pdf-tools-install)
+  (pdf-loader-install)
   (setq-default pdf-view-display-size 'fit-page)
 
   :hook ((pdf-view-mode . pdf-view-themed-minor-mode)
